@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#1B2A4A">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  
+  <title>Info Bus — Navette Express Chauffeur</title>
+  <meta name="description" content="Informations du bus assigné - Navette Express Chauffeur">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/logo/icon-32x32.png">
+  <link rel="apple-touch-icon" href="images/logo/icon-192x192.png">
+  
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="page-info-bus">
+
+  <!-- Bouton urgence flottant -->
+  <a href="tel:+2250703285359" class="btn-urgence-float" aria-label="Appel urgence">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </svg>
+  </a>
+
+  <!-- Header -->
+  <header class="app-header">
+    <a href="accueil.html" class="header-back" aria-label="Retour">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="19" y1="12" x2="5" y2="12"/>
+        <polyline points="12 19 5 12 12 5"/>
+      </svg>
+    </a>
+    <h1 class="header-title">Informations du bus</h1>
+  </header>
+
+  <!-- Contenu principal -->
+  <main class="app-content">
+
+    <!-- Carte principale bus -->
+    <section class="bus-main-card">
+      <div class="bus-icon-large">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M8 6v6"/>
+          <path d="M16 6v6"/>
+          <path d="M2 12h20"/>
+          <path d="M4 18h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z"/>
+          <circle cx="7" cy="18" r="2"/>
+          <circle cx="17" cy="18" r="2"/>
+        </svg>
+      </div>
+      <div class="bus-main-info">
+        <span class="bus-reference">NE-042</span>
+        <span class="bus-type">Minibus 32 places</span>
+      </div>
+      <div class="bus-status-badge ok">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+        <span>Opérationnel</span>
+      </div>
+    </section>
+
+    <!-- Détails du bus -->
+    <section class="bus-details-section">
+      <h2 class="section-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+        Détails du véhicule
+      </h2>
+
+      <div class="bus-details-grid">
+        
+        <!-- Immatriculation -->
+        <div class="bus-detail-card">
+          <div class="detail-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="6" width="18" height="12" rx="2"/>
+              <path d="M7 12h2"/>
+              <path d="M15 12h2"/>
+            </svg>
+          </div>
+          <div class="detail-content">
+            <span class="detail-label">Immatriculation</span>
+            <span class="detail-value">1234 AB 01</span>
+          </div>
+        </div>
+
+        <!-- Capacité -->
+        <div class="bus-detail-card">
+          <div class="detail-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="detail-content">
+            <span class="detail-label">Capacité</span>
+            <span class="detail-value">32 places</span>
+          </div>
+        </div>
+
+        <!-- Type -->
+        <div class="bus-detail-card">
+          <div class="detail-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M8 6v6"/>
+              <path d="M16 6v6"/>
+              <path d="M2 12h20"/>
+              <path d="M4 18h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z"/>
+              <circle cx="7" cy="18" r="2"/>
+              <circle cx="17" cy="18" r="2"/>
+            </svg>
+          </div>
+          <div class="detail-content">
+            <span class="detail-label">Type</span>
+            <span class="detail-value">Minibus climatisé</span>
+          </div>
+        </div>
+
+        <!-- Marque -->
+        <div class="bus-detail-card">
+          <div class="detail-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <div class="detail-content">
+            <span class="detail-label">Marque</span>
+            <span class="detail-value">Toyota Coaster</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- État du bus -->
+    <section class="bus-status-section">
+      <h2 class="section-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+        </svg>
+        État actuel
+      </h2>
+
+      <div class="bus-status-grid">
+
+        <!-- Niveau carburant -->
+        <div class="status-card carburant">
+          <div class="status-header">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 22h12"/>
+              <path d="M4 9h10"/>
+              <path d="M14 22V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v18"/>
+              <path d="M14 13h2a2 2 0 0 1 2 2v3a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V9.83a2 2 0 0 0-.59-1.42L18 5"/>
+            </svg>
+            <span>Niveau carburant</span>
+          </div>
+          <div class="status-gauge">
+            <div class="gauge-bar">
+              <div class="gauge-fill" style="width: 75%;"></div>
+            </div>
+            <span class="gauge-value">75 %</span>
+          </div>
+          <span class="status-note good">Niveau correct</span>
+        </div>
+
+        <!-- Kilométrage -->
+        <div class="status-card kilometrage">
+          <div class="status-header">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+            <span>Kilométrage</span>
+          </div>
+          <div class="status-value-large">
+            <span class="value">87 432</span>
+            <span class="unit">km</span>
+          </div>
+          <span class="status-note">Dernière mise à jour: aujourd'hui</span>
+        </div>
+
+        <!-- Statut maintenance -->
+        <div class="status-card maintenance">
+          <div class="status-header">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+            <span>Statut maintenance</span>
+          </div>
+          <div class="maintenance-status ok">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <span>À jour</span>
+          </div>
+          <span class="status-note">Prochaine révision: 15 Avril 2025</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Équipements -->
+    <section class="bus-equipements-section">
+      <h2 class="section-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 11 12 14 22 4"/>
+          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+        </svg>
+        Équipements
+      </h2>
+
+      <div class="equipements-list">
+        <div class="equipement-item active">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          <span>Climatisation</span>
+        </div>
+        <div class="equipement-item active">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          <span>GPS intégré</span>
+        </div>
+        <div class="equipement-item active">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          <span>Prises USB</span>
+        </div>
+        <div class="equipement-item active">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          <span>Caméra de recul</span>
+        </div>
+        <div class="equipement-item active">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          <span>Extincteur</span>
+        </div>
+        <div class="equipement-item active">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          <span>Trousse de secours</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Action signaler problème -->
+    <section class="bus-actions">
+      <a href="incident.html?type=bus" class="btn btn-warning btn-signaler-probleme">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+          <line x1="12" y1="9" x2="12" y2="13"/>
+          <line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+        <span>Signaler un problème sur le bus</span>
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Navigation bottom -->
+  <nav class="bottom-nav">
+    <a href="accueil.html" class="nav-item" aria-label="Accueil">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="3" width="7" height="9"/>
+        <rect x="14" y="3" width="7" height="5"/>
+        <rect x="14" y="12" width="7" height="9"/>
+        <rect x="3" y="16" width="7" height="5"/>
+      </svg>
+      <span>Accueil</span>
+    </a>
+    
+    <a href="itineraire.html" class="nav-item" aria-label="Itinéraire">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/>
+        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+      </svg>
+      <span>Itinéraire</span>
+    </a>
+    
+    <a href="passagers.html" class="nav-item" aria-label="Passagers">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </svg>
+      <span>Passagers</span>
+    </a>
+    
+    <a href="planning.html" class="nav-item" aria-label="Planning">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="4" width="18" height="18" rx="2"/>
+        <line x1="16" y1="2" x2="16" y2="6"/>
+        <line x1="8" y1="2" x2="8" y2="6"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+      <span>Planning</span>
+    </a>
+    
+    <a href="profil.html" class="nav-item" aria-label="Profil">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/>
+        <circle cx="12" cy="10" r="3"/>
+        <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"/>
+      </svg>
+      <span>Profil</span>
+    </a>
+  </nav>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+</body>
+</html>
