@@ -1,0 +1,80 @@
+{
+  "name": "Navette Express - Espace Chauffeur",
+  "short_name": "Chauffeur",
+  "description": "Application terrain pour chauffeurs professionnels Navette Express - JAEBETS HOLDING",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0F1A2E",
+  "theme_color": "#1B2A4A",
+  "icons": [
+    {
+      "src": "images/logo/logo-jaebets.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/logo/logo-jaebets.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "images/ecrans/chauffeur-accueil.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Tableau de bord chauffeur"
+    },
+    {
+      "src": "images/ecrans/chauffeur-planning.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Planning hebdomadaire"
+    },
+    {
+      "src": "images/ecrans/chauffeur-itineraire.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Itinéraire du trajet"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Itinéraire",
+      "short_name": "Itinéraire",
+      "description": "Voir l'itinéraire en cours",
+      "url": "/itineraire.html",
+      "icons": [
+        {
+          "src": "images/icons/chauffeur-icon-itineraire.jpg",
+          "sizes": "192x192",
+          "type": "image/jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Passagers",
+      "short_name": "Passagers",
+      "description": "Voir la liste des passagers",
+      "url": "/passagers.html",
+      "icons": [
+        {
+          "src": "images/icons/chauffeur-icon-passagers.jpg",
+          "sizes": "192x192",
+          "type": "image/jpeg"
+        }
+      ]
+    }
+  ],
+  "categories": ["business", "productivity", "transportation"],
+  "lang": "fr-CI",
+  "dir": "ltr",
+  "scope": "/",
+  "id": "navette-express-chauffeur"
+}
