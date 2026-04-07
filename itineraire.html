@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#1B2A4A">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  
+  <title>Itinéraire — Navette Express Chauffeur</title>
+  <meta name="description" content="Itinéraire du trajet en cours - Navette Express Chauffeur">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/logo/logo-jaebets.png">
+  <link rel="apple-touch-icon" href="images/logo/logo-jaebets.png">
+  
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="page-itineraire">
+
+  <!-- Bouton urgence flottant -->
+  <a href="tel:+2250703285359" class="btn-urgence-float" aria-label="Appel urgence">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </svg>
+  </a>
+
+  <!-- Header -->
+  <header class="app-header">
+    <a href="accueil.html" class="header-back" aria-label="Retour">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="19" y1="12" x2="5" y2="12"/>
+        <polyline points="12 19 5 12 12 5"/>
+      </svg>
+    </a>
+    <h1 class="header-title">Itinéraire du trajet</h1>
+    <a href="incident.html" class="header-btn alert-btn" aria-label="Signaler incident">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+        <line x1="12" y1="9" x2="12" y2="13"/>
+        <line x1="12" y1="17" x2="12.01" y2="17"/>
+      </svg>
+    </a>
+  </header>
+
+  <!-- Contenu principal -->
+  <main class="app-content">
+
+    <!-- Barre de progression -->
+    <section class="progress-section">
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 25%;"></div>
+      </div>
+      <div class="progress-info">
+        <span class="progress-text">Arrêt 1 sur 4</span>
+        <span class="progress-percent">25%</span>
+      </div>
+    </section>
+
+    <!-- Prochain arrêt (mis en évidence) -->
+    <section class="next-stop-section">
+      <div class="next-stop-card">
+        <div class="next-stop-header">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+          </svg>
+          <span>Prochain arrêt</span>
+        </div>
+        <h2 class="next-stop-name">Cocody Angré</h2>
+        <div class="next-stop-time">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <span>Temps estimé : <strong>8 min</strong></span>
+        </div>
+        <p class="next-stop-instruction">Suivez le trajet étape par étape jusqu'à la destination finale.</p>
+      </div>
+    </section>
+
+    <!-- Info trajet -->
+    <section class="route-info-section">
+      <div class="route-info-card">
+        <div class="route-info-row">
+          <div class="route-info-item">
+            <span class="info-label">Départ</span>
+            <span class="info-value">Gare Aéroport</span>
+            <span class="info-time">07:30</span>
+          </div>
+          <div class="route-info-separator">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </div>
+          <div class="route-info-item">
+            <span class="info-label">Destination</span>
+            <span class="info-value">Plateau Centre</span>
+            <span class="info-time">08:45</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Liste des arrêts -->
+    <section class="stops-section">
+      <h2 class="section-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="16"/>
+          <line x1="8" y1="12" x2="16" y2="12"/>
+        </svg>
+        Arrêts du trajet
+      </h2>
+
+      <div class="stops-list">
+        
+        <!-- Arrêt 1 - Départ (passé) -->
+        <div class="arret-item passed" data-id="1">
+          <div class="arret-marker">
+            <div class="marker-circle">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="marker-line"></div>
+          </div>
+          <div class="arret-content">
+            <div class="arret-header">
+              <span class="arret-number">Départ</span>
+              <span class="arret-time">07:30</span>
+            </div>
+            <h3 class="arret-name">Gare routière Aéroport</h3>
+            <span class="arret-status status-passed">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              Passé
+            </span>
+          </div>
+        </div>
+
+        <!-- Arrêt 2 - En cours -->
+        <div class="arret-item current" data-id="2">
+          <div class="arret-marker">
+            <div class="marker-circle pulse">
+              <span>2</span>
+            </div>
+            <div class="marker-line"></div>
+          </div>
+          <div class="arret-content">
+            <div class="arret-header">
+              <span class="arret-number">Arrêt 2</span>
+              <span class="arret-time">07:52</span>
+            </div>
+            <h3 class="arret-name">Cocody Angré</h3>
+            <span class="arret-status status-current">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+              </svg>
+              Prochain
+            </span>
+            <div class="arret-passengers">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+              </svg>
+              <span>5 passagers à embarquer</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrêt 3 - À venir -->
+        <div class="arret-item upcoming" data-id="3">
+          <div class="arret-marker">
+            <div class="marker-circle">
+              <span>3</span>
+            </div>
+            <div class="marker-line"></div>
+          </div>
+          <div class="arret-content">
+            <div class="arret-header">
+              <span class="arret-number">Arrêt 3</span>
+              <span class="arret-time">08:15</span>
+            </div>
+            <h3 class="arret-name">Cocody Riviera 2</h3>
+            <span class="arret-status status-upcoming">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              À venir
+            </span>
+            <div class="arret-passengers">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+              </svg>
+              <span>8 passagers à embarquer</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrêt 4 - Destination -->
+        <div class="arret-item destination upcoming" data-id="4">
+          <div class="arret-marker">
+            <div class="marker-circle destination-marker">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+          </div>
+          <div class="arret-content">
+            <div class="arret-header">
+              <span class="arret-number">Destination</span>
+              <span class="arret-time">08:45</span>
+            </div>
+            <h3 class="arret-name">Plateau Centre-Ville</h3>
+            <span class="arret-status status-destination">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+              Arrivée finale
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Actions rapides -->
+    <section class="itineraire-actions">
+      <a href="passagers.html" class="btn btn-secondary btn-action">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+        <span>Voir les passagers</span>
+      </a>
+      
+      <button class="btn btn-primary btn-action btn-valider-arret">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        <span>Valider cet arrêt</span>
+      </button>
+    </section>
+
+  </main>
+
+  <!-- Navigation bottom -->
+  <nav class="bottom-nav">
+    <a href="accueil.html" class="nav-item" aria-label="Accueil">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="3" width="7" height="9"/>
+        <rect x="14" y="3" width="7" height="5"/>
+        <rect x="14" y="12" width="7" height="9"/>
+        <rect x="3" y="16" width="7" height="5"/>
+      </svg>
+      <span>Accueil</span>
+    </a>
+    
+    <a href="itineraire.html" class="nav-item active" aria-label="Itinéraire">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/>
+        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+      </svg>
+      <span>Itinéraire</span>
+    </a>
+    
+    <a href="passagers.html" class="nav-item" aria-label="Passagers">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </svg>
+      <span>Passagers</span>
+    </a>
+    
+    <a href="planning.html" class="nav-item" aria-label="Planning">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="4" width="18" height="18" rx="2"/>
+        <line x1="16" y1="2" x2="16" y2="6"/>
+        <line x1="8" y1="2" x2="8" y2="6"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+      <span>Planning</span>
+    </a>
+    
+    <a href="profil.html" class="nav-item" aria-label="Profil">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/>
+        <circle cx="12" cy="10" r="3"/>
+        <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"/>
+      </svg>
+      <span>Profil</span>
+    </a>
+  </nav>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+  <script>
+    // Gestion validation arrêt
+    document.addEventListener('DOMContentLoaded', function() {
+      const btnValider = document.querySelector('.btn-valider-arret');
+      
+      if (btnValider) {
+        btnValider.addEventListener('click', function() {
+          const currentArret = document.querySelector('.arret-item.current');
+          if (currentArret) {
+            // Marquer comme passé
+            currentArret.classList.remove('current');
+            currentArret.classList.add('passed');
+            
+            // Mettre à jour le marqueur
+            const marker = currentArret.querySelector('.marker-circle');
+            marker.classList.remove('pulse');
+            marker.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>';
+            
+            // Mettre à jour le statut
+            const status = currentArret.querySelector('.arret-status');
+            status.className = 'arret-status status-passed';
+            status.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Passé';
+            
+            // Activer le prochain arrêt
+            const nextArret = currentArret.nextElementSibling;
+            if (nextArret && nextArret.classList.contains('upcoming')) {
+              nextArret.classList.remove('upcoming');
+              nextArret.classList.add('current');
+              
+              const nextMarker = nextArret.querySelector('.marker-circle');
+              nextMarker.classList.add('pulse');
+              
+              const nextStatus = nextArret.querySelector('.arret-status');
+              if (!nextArret.classList.contains('destination')) {
+                nextStatus.className = 'arret-status status-current';
+                nextStatus.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg> Prochain';
+              }
+              
+              // Mettre à jour la progression
+              updateProgress();
+              
+              // Mettre à jour le prochain arrêt en haut
+              const nextStopName = nextArret.querySelector('.arret-name').textContent;
+              document.querySelector('.next-stop-name').textContent = nextStopName;
+            }
+            
+            // Feedback visuel
+            if (window.NavetteApp) {
+              window.NavetteApp.showToast('Arrêt validé !', 'success');
+            }
+          }
+        });
+      }
+      
+      function updateProgress() {
+        const total = document.querySelectorAll('.arret-item').length;
+        const passed = document.querySelectorAll('.arret-item.passed').length;
+        const percent = Math.round((passed / total) * 100);
+        
+        document.querySelector('.progress-fill').style.width = percent + '%';
+        document.querySelector('.progress-text').textContent = 'Arrêt ' + passed + ' sur ' + total;
+        document.querySelector('.progress-percent').textContent = percent + '%';
+      }
+    });
+  </script>
+</body>
+</html>
