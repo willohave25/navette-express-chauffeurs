@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Page d'accueil (Splash) -->
+  <url>
+    <loc>https://chauffeur.jaebets-holding.com/</loc>
+    <lastmod>2025-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Connexion -->
+  <url>
+    <loc>https://chauffeur.jaebets-holding.com/connexion.html</loc>
+    <lastmod>2025-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Tableau de bord -->
+  <url>
+    <loc>https://chauffeur.jaebets-holding.com/accueil.html</loc>
+    <lastmod>2025-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Itinéraire -->
+  <url>
+    <loc>https://chauffeur.jaebets-holding.com/itineraire.html</loc>
+    <lastmod>2025-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Passagers -->
+  <url>
+    <loc>https://chauffeur.jaebets-holding.com/passagers.html</loc>
+    <lastmod>2025-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Embarquement -->
+  <url>
+    <loc>https://chauffeur.jaebets-holding.com/embarquement.html</loc>
+    <lastmod>2025-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Incident -->
+  <url>
+    <loc>https://chauffeur.jaebets-holding.com/incident.html</loc>
+    <lastmod>2025-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Planning -->
+  <url>
+    <loc>https://chauffeur.jaebets-holding.com/planning.html</loc>
+    <lastmod>2025-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Info Bus -->
+  <url>
+    <loc>https://chauffeur.jaebets-holding.com/info-bus.html</loc>
+    <lastmod>2025-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Notifications -->
+  <url>
+    <loc>https://chauffeur.jaebets-holding.com/notifications.html</loc>
+    <lastmod>2025-04-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Profil -->
+  <url>
+    <loc>https://chauffeur.jaebets-holding.com/profil.html</loc>
+    <lastmod>2025-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>
