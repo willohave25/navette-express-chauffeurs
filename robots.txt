@@ -1,0 +1,37 @@
+# Robots.txt - Navette Express Espace Chauffeur
+# PWA Application terrain chauffeurs professionnels
+# JAEBETS HOLDING - Abidjan, Côte d'Ivoire
+
+User-agent: *
+Allow: /
+
+# Pages principales
+Allow: /index.html
+Allow: /connexion.html
+Allow: /accueil.html
+Allow: /itineraire.html
+Allow: /passagers.html
+Allow: /embarquement.html
+Allow: /incident.html
+Allow: /planning.html
+Allow: /info-bus.html
+Allow: /notifications.html
+Allow: /profil.html
+
+# Ressources statiques
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Fichiers PWA
+Allow: /manifest.json
+Allow: /sw.js
+
+# Page erreur (ne pas indexer)
+Disallow: /erreur.html
+
+# Sitemap
+Sitemap: https://chauffeur.jaebets-holding.com/sitemap.xml
+
+# Délai entre requêtes (politesse)
+Crawl-delay: 1
