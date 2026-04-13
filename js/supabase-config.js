@@ -29,18 +29,19 @@ async function loginChauffeur(email, password) {
     if (!supabase) initSupabase();
 
     try {
-        const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-        if (error) throw error;
-
-        // Récupérer le profil chauffeur
-        const { data: userRow, error: userErr } = await supabase
+        // Connexion directe via table users (email + password_hash)
+        const { data: userRows, error: userErr } = await supabase
             .from('users')
             .select('*')
-            .eq('auth_id', data.user.id)
-            .single();
+            .eq('email', email)
+            .eq('password_hash', password)
+            .eq('role', 'driver');
 
-        if (userErr || !userRow) throw new Error('Profil chauffeur introuvable');
-        if (userRow.role !== 'driver') throw new Error('Ce compte n\'est pas un compte chauffeur');
+        if (userErr || !userRows || userRows.length === 0) {
+            throw new Error('Identifiants incorrects');
+        }
+
+        const userRow = userRows[0];
 
         // Récupérer l'entrée dans drivers
         const { data: driverRow, error: driverErr } = await supabase
