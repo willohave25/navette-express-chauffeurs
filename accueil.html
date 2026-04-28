@@ -322,16 +322,74 @@
 
   <!-- Scripts -->
   <script src="auth-api.js"></script>
+  <script src="supabase-config.js"></script>
   <script src="js/app.js"></script>
   <script>
-    // Afficher la date du jour
-    document.addEventListener('DOMContentLoaded', function() {
-      const dateElement = document.getElementById('current-date');
-      if (dateElement) {
-        const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
-        const today = new Date().toLocaleDateString('fr-FR', options);
-        dateElement.textContent = today.charAt(0).toUpperCase() + today.slice(1);
+    document.addEventListener('DOMContentLoaded', async function() {
+      // Date du jour
+      const dateEl = document.getElementById('current-date');
+      if (dateEl) {
+        const opts = { weekday:'long', day:'numeric', month:'long', year:'numeric' };
+        const s = new Date().toLocaleDateString('fr-FR', opts);
+        dateEl.textContent = s.charAt(0).toUpperCase() + s.slice(1);
       }
+
+      // Profil chauffeur
+      const user = NavetteAuth.getUser();
+      if (user) {
+        const nameEl = document.querySelector('.welcome-name');
+        if (nameEl) nameEl.textContent = (user.full_name || '').split(' ')[0] || 'Chauffeur';
+      }
+
+      // Trajets du jour via API
+      const driverId = user?.driver_id;
+      if (!driverId) return;
+
+      try {
+        const result = await NavetteAPI.getTrajetsJour(driverId);
+        const trajets = result.success ? result.data : [];
+
+        // Stats
+        const statTrajets = document.querySelector('.stat-card:first-child .stat-value');
+        if (statTrajets) statTrajets.textContent = trajets.length;
+
+        // Prochain départ
+        const now = new Date();
+        const prochain = trajets.find(t => {
+          if (!t.heure_depart) return false;
+          const [h, m] = t.heure_depart.split(':');
+          const d = new Date(); d.setHours(+h, +m, 0);
+          return d > now;
+        }) || trajets[0];
+
+        if (prochain) {
+          const statDepart = document.querySelector('.stat-card.highlight .stat-value');
+          if (statDepart) statDepart.textContent = prochain.heure_depart || '—';
+
+          // Route active
+          const routeName = document.querySelector('.route-name');
+          if (routeName) routeName.textContent = prochain.nom_ligne || (prochain.depart + ' → ' + prochain.destination_ligne) || '—';
+
+          const points = document.querySelectorAll('.route-point');
+          if (points[0]) points[0].querySelector('.point-name').textContent = prochain.depart || '—';
+          if (points[1]) points[1].querySelector('.point-name').textContent = prochain.destination_ligne || '—';
+
+          const busInfo = document.querySelector('.route-bus-info span');
+          if (busInfo) busInfo.textContent = 'Bus ' + (prochain.immatriculation || '—') + ' • En service';
+
+          // Lien démarrer trajet avec trip_id
+          const btnDemarrer = document.querySelector('.btn-demarrer-trajet');
+          if (btnDemarrer) btnDemarrer.href = 'itineraire.html?trip_id=' + prochain.id;
+        } else {
+          const routeCard = document.querySelector('.route-card');
+          if (routeCard) routeCard.innerHTML = '<p style="text-align:center;padding:20px;color:rgba(255,255,255,0.5);">Aucun trajet en cours</p>';
+        }
+
+        // Passagers totaux
+        const statPassagers = document.querySelector('.stat-card:last-child .stat-value');
+        if (statPassagers) statPassagers.textContent = prochain?.passenger_count || '—';
+
+      } catch(e) { console.error('[accueil]', e); }
     });
   </script>
 </body>

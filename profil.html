@@ -389,8 +389,54 @@
 
   <!-- Scripts -->
   <script src="auth-api.js"></script>
+  <script src="supabase-config.js"></script>
   <script src="js/app.js"></script>
   <script>
+    document.addEventListener('DOMContentLoaded', async function() {
+      const user = NavetteAuth.getUser();
+      if (!user) return;
+
+      const driverId = user.driver_id;
+
+      // Fallback: fill from local user data immediately
+      const nomComplet = user.full_name || (user.prenom + ' ' + user.nom) || '';
+      document.querySelector('.profil-nom').textContent = nomComplet || 'Chauffeur';
+      document.querySelector('.info-value') && (document.querySelectorAll('.info-value')[0].textContent = nomComplet);
+      const idEmp = document.querySelectorAll('.info-value')[1];
+      if (idEmp) idEmp.textContent = user.employee_id || user.employeeId || 'N/A';
+
+      // Try API
+      if (driverId) {
+        try {
+          const result = await NavetteAPI.getProfilChauffeur(driverId);
+          if (result.success && result.data) {
+            const d = result.data;
+            const nom = d.nom || d.user?.full_name || nomComplet;
+            document.querySelector('.profil-nom').textContent = nom;
+            document.querySelectorAll('.info-value')[0].textContent = nom;
+            if (idEmp) idEmp.textContent = d.employee_id || user.employee_id || 'N/A';
+
+            const note = d.note_moyenne || d.rating || 0;
+            document.querySelector('.note-value').textContent = 'Note moyenne : ' + (note ? note.toFixed(1) : '–') + ' / 5';
+
+            // Stats
+            const statNums = document.querySelectorAll('.stat-number');
+            if (statNums[0]) statNums[0].textContent = (d.trajets_effectues || d.total_trips || 0).toLocaleString('fr-FR');
+            if (statNums[2]) statNums[2].textContent = note ? note.toFixed(1) + ' / 5' : '– / 5';
+            if (statNums[3]) statNums[3].textContent = note ? note.toFixed(1) + ' / 5' : '– / 5';
+          }
+        } catch(e) { console.warn('[Profil] Erreur API:', e.message); }
+      }
+
+      // Logout
+      const btnDeco = document.querySelector('.btn-deconnexion');
+      if (btnDeco) {
+        btnDeco.addEventListener('click', function() {
+          NavetteAuth.logout();
+        });
+      }
+    });
+
     // Gestion installation PWA dans profil
     let deferredPrompt;
     const installSection = document.getElementById('profil-pwa-install');

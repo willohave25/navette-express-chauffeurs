@@ -56,7 +56,7 @@
           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
           <polyline points="22 4 12 14.01 9 11.01"/>
         </svg>
-        <span class="summary-count">12</span>
+        <span class="summary-count" id="countEmbarque">0</span>
         <span class="summary-label">Embarqués</span>
       </div>
       <div class="summary-item attente">
@@ -64,7 +64,7 @@
           <circle cx="12" cy="12" r="10"/>
           <polyline points="12 6 12 12 16 14"/>
         </svg>
-        <span class="summary-count">14</span>
+        <span class="summary-count" id="countAttente">0</span>
         <span class="summary-label">En attente</span>
       </div>
       <div class="summary-item absent">
@@ -73,7 +73,7 @@
           <line x1="15" y1="9" x2="9" y2="15"/>
           <line x1="9" y1="9" x2="15" y2="15"/>
         </svg>
-        <span class="summary-count">2</span>
+        <span class="summary-count" id="countAbsent">0</span>
         <span class="summary-label">Absents</span>
       </div>
     </section>
@@ -114,192 +114,11 @@
           <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
           <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
         </svg>
-        Nombre de passagers : <span class="passagers-count">28</span>
+        Nombre de passagers : <span class="passagers-count" id="passagersCount">0</span>
       </h2>
 
-      <div class="passagers-list">
-
-        <!-- Passager embarqué -->
-        <a href="embarquement.html?id=1" class="passager-item embarque" data-id="1">
-          <div class="passager-avatar">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
-            </svg>
-          </div>
-          <div class="passager-info">
-            <span class="passager-nom">Koné Aminata</span>
-            <span class="passager-details">Siège 4A • Cocody Angré</span>
-          </div>
-          <div class="passager-status">
-            <span class="status-badge status-embarque">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                <polyline points="20 6 9 17 4 12"/>
-              </svg>
-              Embarqué
-            </span>
-          </div>
-        </a>
-
-        <!-- Passager embarqué -->
-        <a href="embarquement.html?id=2" class="passager-item embarque" data-id="2">
-          <div class="passager-avatar">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
-            </svg>
-          </div>
-          <div class="passager-info">
-            <span class="passager-nom">Touré Ibrahim</span>
-            <span class="passager-details">Siège 5B • Cocody Angré</span>
-          </div>
-          <div class="passager-status">
-            <span class="status-badge status-embarque">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                <polyline points="20 6 9 17 4 12"/>
-              </svg>
-              Embarqué
-            </span>
-          </div>
-        </a>
-
-        <!-- Passager en attente -->
-        <a href="embarquement.html?id=3" class="passager-item attente" data-id="3">
-          <div class="passager-avatar">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
-            </svg>
-          </div>
-          <div class="passager-info">
-            <span class="passager-nom">Diallo Fatoumata</span>
-            <span class="passager-details">Siège 8C • Riviera 2</span>
-          </div>
-          <div class="passager-status">
-            <span class="status-badge status-attente">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
-              En attente
-            </span>
-          </div>
-        </a>
-
-        <!-- Passager en attente -->
-        <a href="embarquement.html?id=4" class="passager-item attente" data-id="4">
-          <div class="passager-avatar">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
-            </svg>
-          </div>
-          <div class="passager-info">
-            <span class="passager-nom">Ouattara Mamadou</span>
-            <span class="passager-details">Siège 9A • Riviera 2</span>
-          </div>
-          <div class="passager-status">
-            <span class="status-badge status-attente">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
-              En attente
-            </span>
-          </div>
-        </a>
-
-        <!-- Passager en attente -->
-        <a href="embarquement.html?id=5" class="passager-item attente" data-id="5">
-          <div class="passager-avatar">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
-            </svg>
-          </div>
-          <div class="passager-info">
-            <span class="passager-nom">Bamba Seydou</span>
-            <span class="passager-details">Siège 10B • Riviera 2</span>
-          </div>
-          <div class="passager-status">
-            <span class="status-badge status-attente">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
-              En attente
-            </span>
-          </div>
-        </a>
-
-        <!-- Passager absent -->
-        <a href="embarquement.html?id=6" class="passager-item absent" data-id="6">
-          <div class="passager-avatar">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
-            </svg>
-          </div>
-          <div class="passager-info">
-            <span class="passager-nom">Coulibaly Jean</span>
-            <span class="passager-details">Siège 2A • Aéroport</span>
-          </div>
-          <div class="passager-status">
-            <span class="status-badge status-absent">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="18" y1="6" x2="6" y2="18"/>
-                <line x1="6" y1="6" x2="18" y2="18"/>
-              </svg>
-              Absent
-            </span>
-          </div>
-        </a>
-
-        <!-- Passager en attente -->
-        <a href="embarquement.html?id=7" class="passager-item attente" data-id="7">
-          <div class="passager-avatar">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
-            </svg>
-          </div>
-          <div class="passager-info">
-            <span class="passager-nom">Yao Kouadio</span>
-            <span class="passager-details">Siège 11A • Plateau</span>
-          </div>
-          <div class="passager-status">
-            <span class="status-badge status-attente">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
-              En attente
-            </span>
-          </div>
-        </a>
-
-        <!-- Passager embarqué -->
-        <a href="embarquement.html?id=8" class="passager-item embarque" data-id="8">
-          <div class="passager-avatar">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
-            </svg>
-          </div>
-          <div class="passager-info">
-            <span class="passager-nom">N'Guessan Marie</span>
-            <span class="passager-details">Siège 6B • Cocody Angré</span>
-          </div>
-          <div class="passager-status">
-            <span class="status-badge status-embarque">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                <polyline points="20 6 9 17 4 12"/>
-              </svg>
-              Embarqué
-            </span>
-          </div>
-        </a>
-
+      <div class="passagers-list" id="passagersList">
+        <div style="text-align:center;padding:32px;color:#888;">Chargement des passagers...</div>
       </div>
     </section>
 
@@ -357,6 +176,113 @@
 
   <!-- Scripts -->
   <script src="auth-api.js"></script>
+  <script src="supabase-config.js"></script>
   <script src="js/app.js"></script>
+  <script>
+    const avatarSvg = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`;
+
+    function statusInfo(s) {
+      if (s === 'boarded' || s === 'embarque') return { cls: 'embarque', label: 'Embarqué', icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>' };
+      if (s === 'absent') return { cls: 'absent', label: 'Absent', icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' };
+      return { cls: 'attente', label: 'En attente', icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>' };
+    }
+
+    function renderPassagers(passagers) {
+      const list = document.getElementById('passagersList');
+      const badge = document.querySelector('.header-badge');
+
+      let embarque = 0, attente = 0, absent = 0;
+      passagers.forEach(p => {
+        const s = p.boarding_status || p.statut_embarquement || 'waiting';
+        if (s === 'boarded' || s === 'embarque') embarque++;
+        else if (s === 'absent') absent++;
+        else attente++;
+      });
+
+      document.getElementById('countEmbarque').textContent = embarque;
+      document.getElementById('countAttente').textContent = attente;
+      document.getElementById('countAbsent').textContent = absent;
+      document.getElementById('passagersCount').textContent = passagers.length;
+      if (badge) badge.textContent = passagers.length;
+
+      if (passagers.length === 0) {
+        list.innerHTML = '<div style="text-align:center;padding:32px;color:#888;">Aucun passager pour ce trajet.</div>';
+        return;
+      }
+
+      list.innerHTML = passagers.map(p => {
+        const nom = p.user?.full_name || p.passager?.full_name || p.nom || 'Passager';
+        const siege = p.seat_number || p.siege || '-';
+        const stop = p.stop?.name || '';
+        const s = p.boarding_status || p.statut_embarquement || 'waiting';
+        const si = statusInfo(s);
+        return `
+        <a href="embarquement.html?id=${p.id}" class="passager-item ${si.cls}" data-id="${p.id}">
+          <div class="passager-avatar">${avatarSvg}</div>
+          <div class="passager-info">
+            <span class="passager-nom">${nom}</span>
+            <span class="passager-details">Siège ${siege}${stop ? ' • ' + stop : ''}</span>
+          </div>
+          <div class="passager-status">
+            <span class="status-badge status-${si.cls}">${si.icon} ${si.label}</span>
+          </div>
+        </a>`;
+      }).join('');
+
+      // Search filter
+      const searchInput = document.querySelector('.search-passager');
+      if (searchInput) {
+        searchInput.addEventListener('input', function() {
+          const q = this.value.toLowerCase();
+          document.querySelectorAll('.passager-item').forEach(item => {
+            item.style.display = item.textContent.toLowerCase().includes(q) ? 'flex' : 'none';
+          });
+        });
+      }
+
+      // Confirm all button
+      const confirmBtn = document.querySelector('.btn-confirmer-tous');
+      if (confirmBtn) {
+        confirmBtn.addEventListener('click', async function() {
+          const items = document.querySelectorAll('.passager-item:not(.embarque)');
+          for (const item of items) {
+            const id = item.dataset.id;
+            if (id) await NavetteAPI.updateEmbarquement(id, 'embarque');
+          }
+          chargerPassagers();
+        });
+      }
+    }
+
+    async function chargerPassagers() {
+      const urlParams = new URLSearchParams(window.location.search);
+      let tripId = urlParams.get('trip_id');
+
+      if (!tripId) {
+        // Try to get first today's trip
+        const user = NavetteAuth.getUser();
+        const driverId = user?.driver_id;
+        if (driverId) {
+          const trips = await NavetteAPI.getTrajetsJour(driverId);
+          if (trips.success && trips.data.length > 0) tripId = trips.data[0].id;
+        }
+      }
+
+      if (!tripId) {
+        document.getElementById('passagersList').innerHTML = '<div style="text-align:center;padding:32px;color:#888;">Aucun trajet actif trouvé. Passez par l\'accueil.</div>';
+        return;
+      }
+
+      try {
+        const result = await NavetteAPI.getPassagers(tripId);
+        if (!result.success) throw new Error(result.error || 'Erreur API');
+        renderPassagers(result.data || []);
+      } catch(e) {
+        document.getElementById('passagersList').innerHTML = `<div style="text-align:center;padding:32px;color:#e74c3c;">Erreur : ${e.message}</div>`;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', chargerPassagers);
+  </script>
 </body>
 </html>

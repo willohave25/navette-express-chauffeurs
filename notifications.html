@@ -63,135 +63,8 @@
     </section>
 
     <!-- Liste des notifications -->
-    <section class="notifications-list">
-
-      <!-- Notification non lue - Nouvelle assignation -->
-      <a href="planning.html" class="notification-item unread" data-type="assignation">
-        <div class="notification-icon assignation">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="4" width="18" height="18" rx="2"/>
-            <line x1="16" y1="2" x2="16" y2="6"/>
-            <line x1="8" y1="2" x2="8" y2="6"/>
-            <line x1="3" y1="10" x2="21" y2="10"/>
-            <path d="M9 16l2 2 4-4"/>
-          </svg>
-        </div>
-        <div class="notification-content">
-          <span class="notification-title">Nouvelle assignation de trajet</span>
-          <p class="notification-text">Vous êtes assigné au trajet Aéroport - Plateau demain à 07:30</p>
-          <span class="notification-time">Il y a 15 minutes</span>
-        </div>
-        <div class="notification-indicator"></div>
-      </a>
-
-      <!-- Notification non lue - Changement horaire -->
-      <a href="planning.html" class="notification-item unread" data-type="horaire">
-        <div class="notification-icon horaire">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <polyline points="12 6 12 12 16 14"/>
-          </svg>
-        </div>
-        <div class="notification-content">
-          <span class="notification-title">Changement d'horaire</span>
-          <p class="notification-text">Votre trajet de 14h30 est avancé à 14h00</p>
-          <span class="notification-time">Il y a 1 heure</span>
-        </div>
-        <div class="notification-indicator"></div>
-      </a>
-
-      <!-- Notification non lue - Alerte passager -->
-      <a href="passagers.html" class="notification-item unread" data-type="alerte">
-        <div class="notification-icon alerte">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-            <line x1="12" y1="9" x2="12" y2="13"/>
-            <line x1="12" y1="17" x2="12.01" y2="17"/>
-          </svg>
-        </div>
-        <div class="notification-content">
-          <span class="notification-title">Alerte passager (retard, absence)</span>
-          <p class="notification-text">Le passager Koné Aminata signale un retard de 10 min à l'arrêt Cocody</p>
-          <span class="notification-time">Il y a 2 heures</span>
-        </div>
-        <div class="notification-indicator"></div>
-      </a>
-
-      <!-- Notification lue - Message dispatch -->
-      <a href="#" class="notification-item read" data-type="message">
-        <div class="notification-icon message">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-          </svg>
-        </div>
-        <div class="notification-content">
-          <span class="notification-title">Message du dispatch</span>
-          <p class="notification-text">Rappel : réunion d'équipe vendredi 14h au bureau</p>
-          <span class="notification-time">Hier à 16:30</span>
-        </div>
-      </a>
-
-      <!-- Notification lue - Maintenance prévue -->
-      <a href="info-bus.html" class="notification-item read" data-type="maintenance">
-        <div class="notification-icon maintenance">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-          </svg>
-        </div>
-        <div class="notification-content">
-          <span class="notification-title">Maintenance prévue sur votre bus</span>
-          <p class="notification-text">Bus NE-042 : révision programmée le 15 Avril 2025</p>
-          <span class="notification-time">Hier à 09:15</span>
-        </div>
-      </a>
-
-      <!-- Notification lue - Nouvelle assignation -->
-      <a href="planning.html" class="notification-item read" data-type="assignation">
-        <div class="notification-icon assignation">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="4" width="18" height="18" rx="2"/>
-            <line x1="16" y1="2" x2="16" y2="6"/>
-            <line x1="8" y1="2" x2="8" y2="6"/>
-            <line x1="3" y1="10" x2="21" y2="10"/>
-            <path d="M9 16l2 2 4-4"/>
-          </svg>
-        </div>
-        <div class="notification-content">
-          <span class="notification-title">Nouvelle assignation de trajet</span>
-          <p class="notification-text">Planning de la semaine 13 disponible</p>
-          <span class="notification-time">Lundi à 08:00</span>
-        </div>
-      </a>
-
-      <!-- Notification lue - Message dispatch -->
-      <a href="#" class="notification-item read" data-type="message">
-        <div class="notification-icon message">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-          </svg>
-        </div>
-        <div class="notification-content">
-          <span class="notification-title">Message du dispatch</span>
-          <p class="notification-text">Bienvenue dans l'équipe Navette Express !</p>
-          <span class="notification-time">15 Mars à 10:00</span>
-        </div>
-      </a>
-
-      <!-- Notification lue - Changement horaire -->
-      <a href="planning.html" class="notification-item read" data-type="horaire">
-        <div class="notification-icon horaire">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <polyline points="12 6 12 12 16 14"/>
-          </svg>
-        </div>
-        <div class="notification-content">
-          <span class="notification-title">Changement d'horaire</span>
-          <p class="notification-text">Les horaires du samedi ont été mis à jour</p>
-          <span class="notification-time">12 Mars à 14:20</span>
-        </div>
-      </a>
-
+    <section class="notifications-list" id="notificationsList">
+      <div style="text-align:center;padding:32px;color:#888;">Chargement des notifications...</div>
     </section>
 
     <!-- État vide (caché par défaut) -->
@@ -260,59 +133,113 @@
 
   <!-- Scripts -->
   <script src="auth-api.js"></script>
+  <script src="supabase-config.js"></script>
   <script src="js/app.js"></script>
   <script>
-    // Gestion des filtres
-    document.addEventListener('DOMContentLoaded', function() {
-      const filterBtns = document.querySelectorAll('.filter-btn');
-      const notifications = document.querySelectorAll('.notification-item');
+    let allNotifs = [];
+
+    function timeAgo(dateStr) {
+      if (!dateStr) return '';
+      const d = new Date(dateStr);
+      const now = new Date();
+      const diff = Math.floor((now - d) / 1000);
+      if (diff < 60) return 'À l\'instant';
+      if (diff < 3600) return 'Il y a ' + Math.floor(diff/60) + ' min';
+      if (diff < 86400) return 'Il y a ' + Math.floor(diff/3600) + ' h';
+      if (diff < 172800) return 'Hier';
+      return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
+    }
+
+    function typeFromNotif(n) {
+      const t = (n.type || n.notification_type || '').toLowerCase();
+      if (t.includes('assign')) return 'assignation';
+      if (t.includes('alerte') || t.includes('alert')) return 'alerte';
+      return 'message';
+    }
+
+    function renderNotifications(notifs, filter = 'all') {
+      const list = document.getElementById('notificationsList');
       const emptyState = document.getElementById('empty-notifications');
 
+      let filtered = notifs;
+      if (filter === 'unread') filtered = notifs.filter(n => !n.is_read && !n.lue);
+      else if (filter !== 'all') filtered = notifs.filter(n => typeFromNotif(n) === filter);
+
+      if (filtered.length === 0) {
+        list.innerHTML = '';
+        if (emptyState) emptyState.classList.remove('hidden');
+        return;
+      }
+      if (emptyState) emptyState.classList.add('hidden');
+
+      list.innerHTML = filtered.map(n => {
+        const isRead = n.is_read || n.lue;
+        const type = typeFromNotif(n);
+        const title = n.title || n.titre || 'Notification';
+        const body = n.body || n.message || n.content || '';
+        const time = timeAgo(n.created_at || n.date_creation);
+        return `
+        <div class="notification-item ${isRead ? 'read' : 'unread'}" data-type="${type}" data-id="${n.id}" onclick="marquerLue(this)">
+          <div class="notification-icon ${type}">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+            </svg>
+          </div>
+          <div class="notification-content">
+            <span class="notification-title">${title}</span>
+            <p class="notification-text">${body}</p>
+            <span class="notification-time">${time}</span>
+          </div>
+          ${!isRead ? '<div class="notification-indicator"></div>' : ''}
+        </div>`;
+      }).join('');
+    }
+
+    async function marquerLue(el) {
+      const id = el.dataset.id;
+      if (id && el.classList.contains('unread')) {
+        el.classList.remove('unread');
+        el.classList.add('read');
+        const indicator = el.querySelector('.notification-indicator');
+        if (indicator) indicator.remove();
+        await NavetteAPI.markNotificationRead(id).catch(() => {});
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', async function() {
+      // Load notifications
+      try {
+        const result = await NavetteAPI.getNotifications();
+        if (result.success) {
+          allNotifs = result.data || [];
+          renderNotifications(allNotifs, 'all');
+        } else {
+          document.getElementById('notificationsList').innerHTML = '<div style="text-align:center;padding:32px;color:#888;">Aucune notification.</div>';
+        }
+      } catch(e) {
+        document.getElementById('notificationsList').innerHTML = `<div style="text-align:center;padding:32px;color:#e74c3c;">Erreur : ${e.message}</div>`;
+      }
+
+      // Filters
+      const filterBtns = document.querySelectorAll('.filter-btn');
       filterBtns.forEach(btn => {
         btn.addEventListener('click', function() {
-          // Activer le bouton
           filterBtns.forEach(b => b.classList.remove('active'));
           this.classList.add('active');
-
-          const filter = this.dataset.filter;
-          let visibleCount = 0;
-
-          notifications.forEach(notif => {
-            let show = false;
-
-            if (filter === 'all') {
-              show = true;
-            } else if (filter === 'unread') {
-              show = notif.classList.contains('unread');
-            } else {
-              show = notif.dataset.type === filter;
-            }
-
-            notif.style.display = show ? 'flex' : 'none';
-            if (show) visibleCount++;
-          });
-
-          // Afficher état vide si aucune notification
-          if (emptyState) {
-            emptyState.classList.toggle('hidden', visibleCount > 0);
-          }
+          renderNotifications(allNotifs, this.dataset.filter);
         });
       });
 
-      // Marquer tout comme lu
+      // Mark all read
       const markAllBtn = document.querySelector('.mark-all-read');
       if (markAllBtn) {
-        markAllBtn.addEventListener('click', function() {
-          notifications.forEach(notif => {
-            notif.classList.remove('unread');
-            notif.classList.add('read');
-            const indicator = notif.querySelector('.notification-indicator');
-            if (indicator) indicator.remove();
-          });
-
-          if (window.NavetteApp) {
-            window.NavetteApp.showToast('Toutes les notifications marquées comme lues', 'success');
+        markAllBtn.addEventListener('click', async function() {
+          const unread = allNotifs.filter(n => !n.is_read && !n.lue);
+          for (const n of unread) {
+            n.is_read = true;
+            await NavetteAPI.markNotificationRead(n.id).catch(() => {});
           }
+          renderNotifications(allNotifs, document.querySelector('.filter-btn.active')?.dataset.filter || 'all');
         });
       }
     });
