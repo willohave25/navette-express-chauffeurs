@@ -100,6 +100,17 @@
         }
 
         saveSession(data.data.token, user);
+        // Enrichir avec driver_id via getMe
+        try {
+          const meRes = await fetch(API_BASE + '/api/auth/me', {
+            headers: { 'Authorization': 'Bearer ' + data.data.token }
+          });
+          const meData = await meRes.json();
+          if (meData.success && meData.data) {
+            const enriched = { ...user, ...meData.data };
+            localStorage.setItem('navette_chauffeur_user', JSON.stringify(enriched));
+          }
+        } catch(e) {}
         showToast('Connexion réussie !', 'success');
         setTimeout(() => { window.location.href = 'accueil.html'; }, 600);
 
